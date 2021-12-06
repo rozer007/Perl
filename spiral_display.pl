@@ -8,7 +8,7 @@ use feature "say";
 my $n=int(<STDIN>);
 my $m=int(<STDIN>);
 
-my @arr=();
+my @arr;
 
 for (my $i=0;$i<$n;$i++) 
 {
@@ -17,13 +17,10 @@ for (my $i=0;$i<$n;$i++)
     for (my $j=0;$j<$m;$j++) 
     {
         my $num=int(<STDIN>);
-        @arr[$i] [$j]=$num;
+        $arr[$i][$j]=$num;
     }
-    # say @subarr;
-    # @arr[$i]=@subarr;
 }
 
-say @arr[2];
 # my $cnt = 0;
 # my $tne  = $n * $m;
 # my $minr = 0;

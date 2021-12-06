@@ -1,21 +1,17 @@
-my $inp = <STDIN>;
-my @ans = gss($inp);
-print join(", ", @ans);
-
 sub gss{
-    my $arr=@_;
-    if(length$arr==0)
+    my ($arr)=@_;
+    if(length $arr==0)
     {
-        my @base=();
-        push @base,"";
+        my @base=("");
         return @base;
     }  
 
     my $ch = substr $arr, 0, 1;
-    my $ros = substr $arr, 1, (length $arr) - 1;  
+    my $ros = substr $arr, 1;  
 
     my @rec_res = gss($ros);
     my @my_res;
+
     for $val (@rec_res)
     {
         push @my_res, $val;
@@ -28,4 +24,11 @@ sub gss{
     }
     return @my_res;
 }
+
+my $inp = <STDIN>;
+chomp $inp;
+my @ans = gss($inp);
+print join(", ", @ans);
+
+
 

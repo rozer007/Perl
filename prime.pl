@@ -4,19 +4,24 @@ use diagnostics;
 
 use feature "say";
 
-my $i=1;
-my $count=0;
+my $i=2;
+my $flag=1;
 my $n=int(<STDIN>);
-while($i<=$n)
+while($i*$i<=$n)
 {
     if($n%$i==0)
     {
-        $count++;
+        $flag=0;
+        last;
     }
     $i++;
 }
 
-if($count==2)
-{say "Is prime";}
+if($flag==1)
+{
+    say "Is prime";
+}
 else
-{say "Is not prime";}
+{
+    say "Is not prime";
+}

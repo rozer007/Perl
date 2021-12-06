@@ -1,7 +1,3 @@
-use strict;
-use warnings;
-use diagnostics;
-
 use feature "say";
 
 package pepcoder;
@@ -26,8 +22,4 @@ sub set_name{
     $self->{name} = $name if defined($name);
     return $self->{name};
 }
-
-my $pep = new pepcoder("pepcoder",1);
-$pep->get_all();
-$pep->set_name("pep");
-$pep->get_all();
+1;
